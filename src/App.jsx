@@ -1,7 +1,23 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [ token, setToken ] = useState(false); 
+
+  function tokenCheck() {
+    if (window.localStorage.getItem('token')) {
+      setToken(window.localStorage.getItem('token'));
+    }
+  };
+    
+  useEffect(() => {
+    tokenCheck();
+  }, []);
+
+  
   return (
     <div className="App">
       <header className="App-header">
