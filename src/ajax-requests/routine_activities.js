@@ -21,7 +21,7 @@ export const updateRoutineActivity = async (routineActivityId, token, routineAct
     }
   };
 
-  export const deletePost = async (routineActivityId, token) => {
+  export const deleteRoutineActivity = async (routineActivityId, token) => {
     try {
       const response = await fetch(`${BASE_URL}/routine_activities/:${routineActivityId}`, {
         method: "DELETE",
@@ -36,4 +36,3 @@ export const updateRoutineActivity = async (routineActivityId, token, routineAct
       console.error(err);
     }
   };
-  
